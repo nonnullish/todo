@@ -2,19 +2,30 @@ window.onload = () => {
     let storage = Object.keys(window.localStorage);
     let storageSize = storage.length;
     let regex = /item-\d+/g;
-    for (let i = storageSize - 1; i > 0; i--) {
+    for (let i = storageSize - 1; i >= 0; i--) {
         if (storage[i].match(regex)) {
             let id = storage[i].match(regex)[0];
             newItem(id, window.localStorage.getItem(id));
         }
     }
+    startTime();
 }
 
 document.onclick = (e) => {
-    if (!["block", "item", "label"].includes(e.target.className)) {
-        newItem();
+    if (!["block", "item", "label", "clock"].includes(e.target.className)) {
+        e.preventDefault();
+        newItem().focus();
     }
 };
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === 'Enter') {
+        newItem().focus();
+    }
+    if (e.key === 'Esc') {
+        document.body.focus();
+    }
+})
 
 let deleteElement = async (id, item) => {
     await new Promise(r => setTimeout(r, 2000));
@@ -53,4 +64,23 @@ let newItem = (id = "", message = "") => {
 
     let items = document.getElementById("items");
     items.append(block);
+
+    return (label);
 };
+
+let startTime = () => {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    m = checkTime(m);
+    document.getElementById("clock").innerHTML = `${h}:${m}`;
+    document.title = `${h}:${m}`;
+    setTimeout(startTime, 1000);
+}
+
+let checkTime = (i) => {
+    if (i < 10) {
+        i = "0" + i
+    };
+    return i;
+}

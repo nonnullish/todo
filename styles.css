@@ -1,3 +1,12 @@
+:root {
+    --accentColor: #767676;
+}
+
+* {
+    font-size  : 100%;
+    font-family: monospace;
+}
+
 body {
     display        : flex;
     height         : 100vh;
@@ -19,31 +28,44 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #767676;
+    background: var(--accentColor);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #767676;
+    background: var(--accentColor);
 }
 
 #items {
     width     : 40vw;
-    height    : 40vh;
+    max-height    : 40vh;
     overflow-y: scroll;
 }
 
 .block {
-    display: flex;
-    padding: 10px 10px;
+    display    : flex;
+    padding    : 10px 10px;
+    align-items: center;
+}
+
+#clock {
+    text-align    : center;
+    font-size     : 4em;
+    padding-bottom: 40px;
 }
 
 input.label {
     width        : 100%;
     border       : 0;
-    border-bottom: 1px solid #767676;
+    border-bottom: 1px solid var(--accentColor);
+    margin       : 0 20px;
 }
 
 textarea:focus,
 input:focus {
     outline: none;
+}
+
+input[type="checkbox"] {
+    width : 1.75em;
+    height: 1.75em;
 }
