@@ -409,6 +409,7 @@ const updatePage = () => {
     const backgroundColor = localStorage.getItem("color");
     if (backgroundColor) {
       document.documentElement.style.setProperty("--img-url", backgroundColor);
+      document.querySelector("#refresh-icon svg").classList.remove("spinning");
       return;
     }
   }
