@@ -1,22 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-
+  <head>
+    <meta charset="utf-8" />
     <title> </title>
-    <meta name="description" content=" ">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content=" " />
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="main.js" as="script" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="main.js"></script>
     <link
-        href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AMDAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREAASIiIiIiIQABERERERERAAEiIiIiIiEAAREREREREQABIiIiIiIhAAEREREREREAASIiIiIiIQABERERERERAAEiIiIiIiEAAREREREREQAAAAAAAAAAAAEBAQEBAQEAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA"
-        rel="icon" type="image/x-icon" />
-</head>
+      href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AMDAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREREREAASIiIiIiIQABERERERERAAEiIiIiIiEAAREREREREQABIiIiIiIhAAEREREREREAASIiIiIiIQABERERERERAAEiIiIiIiEAAREREREREQAAAAAAAAAAAAEBAQEBAQEAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA"
+      rel="icon"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
-    <div class="clock" id="clock"></div>
-    <div id="items"></div>
-</body>
+  <body>
+    <div id="wrapper">
+      <div class="main">
+        <div class="clock" id="clock"></div>
+        <div class="vitals" id="vitals">
+          <div id="date"></div>
+          <div class="battery">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-battery-1"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M6 7h11a2 2 0 0 1 2 2v.5a0.5 .5 0 0 0 .5 .5a0.5 .5 0 0 1 .5 .5v3a0.5 .5 0 0 1 -.5 .5a0.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2"
+              ></path>
+              <path d="M7 10l0 4"></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-battery-2"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M6 7h11a2 2 0 0 1 2 2v.5a0.5 .5 0 0 0 .5 .5a0.5 .5 0 0 1 .5 .5v3a0.5 .5 0 0 1 -.5 .5a0.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2"
+              ></path>
+              <path d="M7 10l0 4"></path>
+              <path d="M10 10l0 4"></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-battery-3"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M6 7h11a2 2 0 0 1 2 2v.5a0.5 .5 0 0 0 .5 .5a0.5 .5 0 0 1 .5 .5v3a0.5 .5 0 0 1 -.5 .5a0.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2"
+              ></path>
+              <path d="M7 10l0 4"></path>
+              <path d="M10 10l0 4"></path>
+              <path d="M13 10l0 4"></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-battery-4"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M6 7h11a2 2 0 0 1 2 2v.5a0.5 .5 0 0 0 .5 .5a0.5 .5 0 0 1 .5 .5v3a0.5 .5 0 0 1 -.5 .5a0.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2"
+              ></path>
+              <path d="M7 10l0 4"></path>
+              <path d="M10 10l0 4"></path>
+              <path d="M13 10l0 4"></path>
+              <path d="M16 10l0 4"></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-battery-charging"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16 7h1a2 2 0 0 1 2 2v.5a0.5 .5 0 0 0 .5 .5a0.5 .5 0 0 1 .5 .5v3a0.5 .5 0 0 1 -.5 .5a0.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-2"
+              ></path>
+              <path d="M8 7h-2a2 2 0 0 0 -2 2v6a2 2 0 0 0 2 2h1"></path>
+              <path d="M12 8l-2 4h3l-2 4"></path>
+            </svg>
+            <div id="status"></div>
+          </div>
+        </div>
+        <div id="items"></div>
+      </div>
+      <div id="settings-panel">
+        <h1>Background</h1>
+        <div class="block">
+          <input
+            class="item"
+            id="chicago"
+            type="radio"
+            name="background"
+            value="chicago"
+            onclick="setBackground(this.value)"
+          />
+          <label for="chicago" class="label">The Art Institute of Chicago</label>
+        </div>
+        <div class="block">
+          <input class="item" id="met" type="radio" name="background" value="met" onclick="setBackground(this.value)" />
+          <label for="met" class="label">The Metropolitan Museum of Art</label>
+        </div>
+        <div class="block">
+          <input
+            class="item"
+            id="nasa"
+            type="radio"
+            name="background"
+            value="nasa"
+            onclick="setBackground(this.value)"
+          />
+          <label for="nasa" class="label">NASA Astronomy Picture of the Day</label>
+        </div>
+        <div class="block">
+          <input
+            class="item"
+            id="unsplash"
+            type="radio"
+            name="background"
+            value="unsplash"
+            onclick="setBackground(this.value)"
+          />
+          <label for="unsplash" class="label">Unsplash</label>
+          <select name="subject" id="subject-select" onchange="setUnsplashSubject(this.value);" class="label">
+            <option value="wallpaper">Random</option>
+            <option value="architecture">Architecture</option>
+            <option value="city">Cities</option>
+            <option value="flowers">Flowers</option>
+            <option value="nature">Nature</option>
+            <option value="dogs">Dogs</option>
+            <option value="cats">Cats</option>
+          </select>
+        </div>
+        <div class="block">
+          <input
+            class="item"
+            id="custom"
+            type="radio"
+            name="background"
+            value="custom"
+            onclick="setBackground(this.value)"
+          />
+          <label style="margin-right: 0; white-space: nowrap" for="custom" class="label">Custom path to image:</label>
+          <input
+            style="border-bottom: 2px solid white"
+            class="label"
+            id="bg-url"
+            value=""
+            onchange="clearBackground(); callHome()"
+          />
+        </div>
+        <div class="block">
+          <input
+            class="item"
+            id="solid"
+            type="radio"
+            name="background"
+            value="solid"
+            onclick="setBackground(this.value); setBackgroundColor(document.querySelector('#solid-color').value)"
+          />
+          <label style="margin-right: 0; white-space: nowrap" for="solid" class="label">Solid color:</label>
+          <input type="color" class="label" id="solid-color" onchange="setBackgroundColor(this.value)" />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="title"></div>
+      <div id="artist"></div>
+      <div id="bg-date"></div>
+      <div id="refresh-icon">
+        <svg
+          class="settings"
+          viewBox="0 0 24 24"
+          width="1em"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+      </div>
 
+      <div id="settings-icon">
+        <svg
+          class="settings"
+          viewBox="0 0 24 24"
+          width="1em"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
 </html>
