@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./static/css/main.cbd3bce2.css",
+    "main.js": "./static/js/main.f44953ab.js",
+    "static/media/inter.ttf": "./static/media/inter.e89cb19905e7db5591b0.ttf",
+    "static/media/martian-mono.ttf": "./static/media/martian-mono.3c5378e9e3793a7b789b.ttf",
+    "static/media/soria.woff": "./static/media/soria.cf9e30519774523d1a41.woff",
+    "index.html": "./index.html",
+    "main.cbd3bce2.css.map": "./static/css/main.cbd3bce2.css.map",
+    "main.f44953ab.js.map": "./static/js/main.f44953ab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbd3bce2.css",
+    "static/js/main.f44953ab.js"
+  ]
+}
