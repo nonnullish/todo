@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/inter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Soria';
+  src: url('fonts/soria.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Martian Mono';
+  src: url('fonts/martian-mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+}
+
+body {
+  color: #222222;
+  font-family: "Inter";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  padding: 8px;
+  font-size: 0.8725rem;
+}
+
+.card.editable {
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #eeeeee;
+  transition: box-shadow 0.5s;
+}
+
+.card.editable:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  transition: box-shadow 0.5s;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings {
+  position: absolute;
+  margin: 16px;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s;
+  cursor: pointer;
+  padding: 24px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.settings:hover {
+  opacity: 1;
+  transition: 0.5s;
+}

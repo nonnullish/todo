@@ -1,0 +1,16 @@
+hgroup {
+    text-align: center;
+    user-select: none;
+    cursor: default;
+}
+
+h1 {
+    font-family: 'Soria';
+    font-size: 9rem;
+    line-height: 70%;
+}
+
+h1,
+h3 {
+    font-weight: normal;
+}

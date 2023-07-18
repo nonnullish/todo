@@ -1,0 +1,38 @@
+#battery {
+    --width: 32px;
+    --height: 20px;
+    height: var(--height);
+    width: var(--width);
+    border: 2px solid #222222;
+    border-radius: 4px;
+    margin: 0 8px;
+    position: relative;
+    user-select: none;
+}
+
+#battery:after {
+    --width: 5px;
+    --height: 10px;
+    content: '';
+    width: var(--width);
+    height: var(--height);
+    background: #222222;
+    position: absolute;
+    right: calc(-1 * var(--width));
+    border-radius: 0 2px 2px 0;
+    top: calc(50% - var(--height) / 2)
+}
+
+#charge {
+    --margin: 2px;
+    border-radius: 2px;
+    height: calc(100% - var(--margin) * 2);
+    width: calc(var(--charge) - var(--margin) * 2);
+    margin: var(--margin);
+    background-color: var(--color);
+}
+
+p {
+    user-select: none;
+    cursor: default;
+}

@@ -1,0 +1,22 @@
+.bookmark {
+    background-color: transparent;
+    color: #222222;
+    width: 100%;
+    border: none;
+    caret-color: #222222;
+    flex: 1;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input.bookmark {
+    border-bottom: 1px solid #222222;
+}
+
+.link-icon {
+    margin-right: 8px;
+}
+
+input.bookmark:focus {
+    outline: none;
+}

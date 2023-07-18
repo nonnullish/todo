@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+}
+
+textarea:focus {
+    outline: none;
+    background: transparent;
+}
+
+.snippet {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.snippet pre {
+    color: white;
+    background: #2e3440 !important;
+}
+
+.snippet textarea {
+    caret-color: white !important;
+}
+
+button {
+    appearance: none;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding-left: 8px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.wrapper:hover button {
+    opacity: 1;
+    transition: 0.5s;
+}

@@ -1,0 +1,31 @@
+.zone {
+    height: 100%;
+    cursor: copy;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    background-color: transparent;
+    color: #222222;
+}
+
+.checkbox {
+    cursor: pointer;
+}
+
+.label {
+    width: 100%;
+    border: 0;
+    caret-color: #222222;
+    margin: 0 16px;
+    flex: 1;
+    font-family: inherit;
+}
+
+input:focus {
+    outline: none;
+}
